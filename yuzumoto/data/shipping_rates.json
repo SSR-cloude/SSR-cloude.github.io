@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-26",
+  "effectiveFrom": "2026-08-26",
+  "sourceNote": "日本郵便の公表内容にもとづく参考値です。最終的な料金は日本郵便の公式サイトでご確認ください。",
+  "_comment_scope": "個人間の直接郵送で利用できるものに限る。ゆうパケットポスト/miniはフリマアプリ等の提携サービス経由でのみ利用可能なため対象外。",
+  "_comment_fix_20260826": "【訂正】定形郵便に「25gまで85円」の区分があったが誤り。日本郵便公式（国内の料金表 第一種・第二種）で「定形郵便物は50g以内110円。25g以内の区分は存在しない」ことを確認した。85円は通常はがきの料金で、混同していた。あわせて定形外（規格外）のサイズ上限 null を公式値で埋めた（長辺60cm以内・長辺+短辺+厚さ=90cm以内）。",
+  "upcomingRevision": {
+    "effectiveFrom": "2026-10-01",
+    "summary": "料金改定が予定されています",
+    "sourceNote": "日本郵便 2026-07-03 発表"
+  },
+  "_comment_upcoming": "改定対象はゆうパック・ゆうパケット・クリックポストのみ（手紙・はがき・定形外・レターパック・スマートレター・ミニレターは対象外）。内容: クリックポスト 185→240円・重量1kg→2kg・サイズ基準が3辺合計60cm/長辺34cmへ・差出は原則ポスト投函へ / ゆうパケット 厚さ区分を廃止し3cm以内360円に統合。差し替え版は shipping_rates_20261001.json。",
+  "payload": {
+    "methods": [
+      {
+        "id": "jp_miniletter",
+        "name": "郵便書簡（ミニレター）",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 25,
+          "maxLengthCm": 16.5,
+          "maxWidthCm": 9.2,
+          "maxThicknessCm": 1,
+          "requiresSpecialEnvelope": true
+        },
+        "tracking": false,
+        "compensation": false,
+        "dropOff": ["ポスト投函", "窓口"],
+        "priceTiers": [{ "upToWeightG": 25, "priceYen": 85 }],
+        "extraCostYen": 0,
+        "note": "専用の郵便書簡（85円）に料金が含まれる。封筒がそのまま便箋になる。",
+        "officialUrl": "https://www.post.japanpost.jp/"
+      },
+      {
+        "id": "jp_teikei",
+        "name": "定形郵便",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 50,
+          "maxLengthCm": 23.5,
+          "maxWidthCm": 12,
+          "maxThicknessCm": 1,
+          "requiresOwnPackaging": true
+        },
+        "tracking": false,
+        "compensation": false,
+        "dropOff": ["ポスト投函", "窓口"],
+        "priceTiers": [{ "upToWeightG": 50, "priceYen": 110 }],
+        "extraCostYen": 0,
+        "note": "50gまで一律110円（重量区分なし）。長さ14〜23.5cm・幅9〜12cmの長方形に収まらないものは定形外になる。",
+        "officialUrl": "https://www.post.japanpost.jp/send/domestic/charge/list/one_two.html"
+      },
+      {
+        "id": "jp_teikeigai_kikakunai",
+        "name": "定形外郵便（規格内）",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 1000,
+          "maxLengthCm": 34,
+          "maxWidthCm": 25,
+          "maxThicknessCm": 3,
+          "requiresOwnPackaging": true
+        },
+        "tracking": false,
+        "compensation": false,
+        "dropOff": ["ポスト投函", "窓口"],
+        "priceTiers": [
+          { "upToWeightG": 50, "priceYen": 140 },
+          { "upToWeightG": 100, "priceYen": 180 },
+          { "upToWeightG": 150, "priceYen": 270 },
+          { "upToWeightG": 250, "priceYen": 320 },
+          { "upToWeightG": 500, "priceYen": 510 },
+          { "upToWeightG": 1000, "priceYen": 750 }
+        ],
+        "extraCostYen": 0,
+        "officialUrl": "https://www.post.japanpost.jp/send/domestic/charge/list/one_two.html"
+      },
+      {
+        "id": "jp_teikeigai_kikakugai",
+        "name": "定形外郵便（規格外）",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 4000,
+          "maxLengthCm": 60,
+          "maxTotalCm": 90,
+          "requiresOwnPackaging": true
+        },
+        "tracking": false,
+        "compensation": false,
+        "dropOff": ["窓口"],
+        "priceTiers": [
+          { "upToWeightG": 50, "priceYen": 260 },
+          { "upToWeightG": 100, "priceYen": 290 },
+          { "upToWeightG": 150, "priceYen": 390 },
+          { "upToWeightG": 250, "priceYen": 450 },
+          { "upToWeightG": 500, "priceYen": 660 },
+          { "upToWeightG": 1000, "priceYen": 920 },
+          { "upToWeightG": 2000, "priceYen": 1350 },
+          { "upToWeightG": 4000, "priceYen": 1750 }
+        ],
+        "extraCostYen": 0,
+        "note": "規格内に収まらないもの。長辺60cm以内かつ「長辺＋短辺＋厚さ＝90cm以内」。短辺と厚さに個別の上限はなく、3辺合計で決まる。",
+        "officialUrl": "https://www.post.japanpost.jp/send/domestic/charge/list/one_two.html"
+      },
+      {
+        "id": "jp_smartletter",
+        "name": "スマートレター",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 1000,
+          "maxLengthCm": 25,
+          "maxWidthCm": 17,
+          "maxThicknessCm": 2,
+          "requiresSpecialEnvelope": true
+        },
+        "tracking": false,
+        "compensation": false,
+        "dropOff": ["ポスト投函", "窓口"],
+        "priceTiers": [{ "upToWeightG": 1000, "priceYen": 210 }],
+        "extraCostYen": 0,
+        "note": "A5サイズの専用封筒（210円）に料金が含まれる。寸法は一次情報で要確認。",
+        "officialUrl": "https://www.post.japanpost.jp/"
+      },
+      {
+        "id": "jp_letterpack_light",
+        "name": "レターパックライト",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 4000,
+          "maxLengthCm": 34,
+          "maxWidthCm": 24.8,
+          "maxThicknessCm": 3,
+          "requiresSpecialEnvelope": true
+        },
+        "tracking": true,
+        "compensation": false,
+        "dropOff": ["ポスト投函", "窓口"],
+        "priceTiers": [{ "upToWeightG": 4000, "priceYen": 430 }],
+        "extraCostYen": 0,
+        "note": "A4サイズの専用封筒（430円）に料金が含まれる。受取人のポストに投函される。",
+        "officialUrl": "https://www.post.japanpost.jp/"
+      },
+      {
+        "id": "jp_letterpack_plus",
+        "name": "レターパックプラス",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 4000,
+          "maxLengthCm": 34,
+          "maxWidthCm": 24.8,
+          "maxThicknessCm": null,
+          "requiresSpecialEnvelope": true
+        },
+        "tracking": true,
+        "compensation": false,
+        "dropOff": ["ポスト投函", "窓口"],
+        "priceTiers": [{ "upToWeightG": 4000, "priceYen": 600 }],
+        "extraCostYen": 0,
+        "note": "対面でお届け（受領印が必要）。厚さ制限は要一次情報確認（封が閉まる範囲との情報あり）。",
+        "officialUrl": "https://www.post.japanpost.jp/"
+      },
+      {
+        "id": "jp_clickpost",
+        "name": "クリックポスト",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 1000,
+          "maxLengthCm": 34,
+          "maxWidthCm": 25,
+          "maxThicknessCm": 3,
+          "requiresOwnPackaging": true,
+          "requiresAccount": true,
+          "requiresPrinter": true
+        },
+        "tracking": true,
+        "compensation": false,
+        "dropOff": ["ポスト投函", "窓口"],
+        "priceTiers": [{ "upToWeightG": 1000, "priceYen": 185 }],
+        "extraCostYen": 0,
+        "note": "Yahoo! JAPAN ID または Amazonアカウントと、宛名ラベルを印刷できる環境が必要。2026-10-01 から240円・重量2kgまでに変わり、差出は原則ポスト投函になる。",
+        "officialUrl": "https://clickpost.jp/"
+      },
+      {
+        "id": "jp_yupacket",
+        "name": "ゆうパケット",
+        "carrier": "日本郵便",
+        "constraints": {
+          "maxWeightG": 1000,
+          "maxLengthCm": 34,
+          "maxTotalCm": 60,
+          "maxThicknessCm": 3,
+          "requiresOwnPackaging": true,
+          "requiresAddressSticker": true
+        },
+        "tracking": true,
+        "compensation": false,
+        "dropOff": ["ポスト投函", "窓口"],
+        "priceTiers": [
+          { "upToThicknessCm": 1, "priceYen": 250 },
+          { "upToThicknessCm": 2, "priceYen": 310 },
+          { "upToThicknessCm": 3, "priceYen": 360 }
+        ],
+        "priceBy": "thickness",
+        "extraCostYen": 0,
+        "note": "専用あて名シールが必要。料金は厚さで決まる。2026-10-01 から厚さ区分が廃止され、3cm以内は一律360円になる。",
+        "officialUrl": "https://www.post.japanpost.jp/service/yu_packet/"
+      }
+    ]
+  }
+}

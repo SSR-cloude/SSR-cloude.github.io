@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<meta name="description" content="ゆずもと — X上のグッズ交換に使う一覧画像と募集文をつくり、交換の進み具合を記録するアプリのサポートページ。">
+<title>ゆずもと — グッズ交換の一覧画像と在庫・取引管理</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e3e3e6;
+  --accent:#2f6b4f; --accent-bg:#eef5f1; --warn-bg:#fff4e5; --warn-line:#e0a63c;
+  --todo-bg:#ffe9e9; --todo-fg:#a3231f;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#131315; --fg:#ececed; --muted:#9a9aa0; --line:#2e2e32;
+    --accent:#7fc0a0; --accent-bg:#1b2a23; --warn-bg:#2c2415; --warn-line:#8a6a2a;
+    --todo-bg:#3a1d1d; --todo-fg:#ff9b96;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  font-size:16px; line-height:1.85; letter-spacing:.01em;
+}
+.wrap{max-width:44rem; margin:0 auto; padding:2.5rem 1.25rem 5rem}
+header.doc{border-bottom:2px solid var(--line); padding-bottom:1.25rem; margin-bottom:2rem}
+header.doc .app{font-size:.8rem; color:var(--accent); font-weight:700; letter-spacing:.08em; margin:0 0 .35rem}
+h1{font-size:1.6rem; line-height:1.4; margin:0; font-weight:700}
+h2{font-size:1.15rem; margin:2.6rem 0 .8rem; padding-top:1.4rem; border-top:1px solid var(--line); font-weight:700}
+h2:first-of-type{border-top:none; padding-top:0}
+h3{font-size:1rem; margin:1.8rem 0 .6rem; color:var(--muted); font-weight:700}
+p{margin:.9rem 0}
+ul,ol{margin:.9rem 0; padding-left:1.4rem}
+li{margin:.45rem 0}
+strong{font-weight:700}
+hr{display:none}
+table{width:100%; border-collapse:collapse; margin:1.2rem 0; font-size:.92rem; display:block; overflow-x:auto; white-space:nowrap}
+th,td{border:1px solid var(--line); padding:.6rem .75rem; text-align:left; vertical-align:top}
+th{background:var(--accent-bg); font-weight:700}
+@media (min-width:36rem){ table{display:table; white-space:normal} }
+a{color:var(--accent)}
+code{font-size:.9em; background:var(--accent-bg); padding:.1em .35em; border-radius:3px}
+.todo{background:var(--todo-bg); color:var(--todo-fg); font-weight:700; padding:.1em .4em; border-radius:3px}
+footer.doc{margin-top:3.5rem; padding-top:1.25rem; border-top:1px solid var(--line); font-size:.85rem; color:var(--muted)}
+footer.doc a{color:var(--muted)}
+.nav{margin:0 0 2rem; font-size:.9rem}
+.nav a{margin-right:1.2rem; text-decoration:none}
+.card{background:var(--accent-bg); border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.25rem; margin:1.2rem 0}
+.card h3{margin-top:0; color:var(--fg)}
+.lead{font-size:1.05rem; color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav"><strong>ホーム</strong> <a href="terms.html">利用規約</a> <a href="privacy.html">プライバシーポリシー</a></nav>
+<header class="doc">
+<p class="app">iOS アプリ</p>
+<h1>ゆずもと</h1>
+</header>
+
+<p class="lead">X（旧Twitter）でのランダムグッズ交換を、少しだけ楽にする道具です。</p>
+
+<h2>ゆずもと について</h2>
+
+<p><strong>ゆずもと</strong>は、手持ちのグッズを登録しておくと、
+交換の募集に使う<strong>一覧画像</strong>と<strong>募集文</strong>を作れるアプリです。
+交換が始まったあとの進み具合も、1件ずつ記録しておけます。</p>
+
+<div class="card">
+<h3>⚠️ 交換そのものは、このアプリの外で行われます</h3>
+<p><strong>ゆずもとは、交換の当事者ではありません。</strong>
+相手を探す機能も、相手とやりとりする機能もありません。
+相手探しとやりとりは、これまでどおり X 上で行っていただきます。</p>
+<p>ゆずもとがするのは、<strong>そのための準備を整えることと、進み具合を覚えておくこと</strong>だけです。</p>
+</div>
+
+<h2>できること</h2>
+
+<table>
+<thead><tr><th>できること</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td><strong>一覧画像をつくる</strong></td><td>登録したグッズを並べた画像を書き出せます。数量つきのグリッド型と、ご自身で用意した画像の上に印を置く型の2通り。</td></tr>
+<tr><td><strong>在庫を数える</strong></td><td>譲れるもの・求めているものを、数量つきで管理できます。交換が完了すると数が自動で減ります。</td></tr>
+<tr><td><strong>募集文をつくる</strong></td><td>実際の投稿でよく使われている型から選んで、条件を埋めるだけで本文ができます。</td></tr>
+<tr><td><strong>交換の進み具合を記録する</strong></td><td>打診から受領まで、1件ずつ段階を記録できます。約束が重なっていれば知らせます。流れてしまった話も、記録として残せます。</td></tr>
+<tr><td><strong>送料を調べる</strong></td><td>重さと大きさから、日本郵便の発送方法を安い順に並べます。必要な準備（専用封筒・あて名シールなど）も一緒に出ます。</td></tr>
+<tr><td><strong>実績カードをつくる</strong></td><td>これまでの交換の件数をまとめた画像を作れます。<strong>ご自身の記録にもとづく自己申告</strong>である旨が必ず入ります。</td></tr>
+</tbody>
+</table>
+
+<h2>大切にしていること</h2>
+
+<h3>相手の個人情報を、そもそも預かりません</h3>
+<p>ゆずもとには、<strong>相手の氏名・住所・電話番号・メールアドレスを入力する欄がありません。</strong>
+交換の記録では「住所を受け取ったか」「消したか」だけを扱い、中身は保存しません。</p>
+
+<h3>写真の位置情報は、取り込むときに消えます</h3>
+<p>スマートフォンで撮った写真には、撮影場所が記録されていることがあります。
+自宅で撮った写真をそのまま投稿すると、住所が伝わってしまうおそれがあります。
+ゆずもとは<strong>取り込んだ時点でこの情報を消します。</strong></p>
+
+<h3>データは端末の中だけにあります</h3>
+<p>登録した内容が当方のサーバーに送られることはありません。
+そのぶん、<strong>端末を替えるときはご自身でバックアップを取っていただく必要があります。</strong>
+設定画面から、写真も含めて1つのファイルに書き出せます。</p>
+
+<h3>解析ツールも広告も入れていません</h3>
+<p>そのため、当方はこのアプリがどう使われているかを知ることができません。
+<strong>お困りのことがあれば、下のフォームからお知らせください。</strong>
+それが改善のいちばんの手がかりになります。</p>
+
+<h2>お問い合わせ</h2>
+
+<p>不具合のご報告、ご要望、その他のお問い合わせは、こちらからお願いします。</p>
+
+<div class="card">
+<p><strong>▶ <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA4TrKYrAcr0uhnroiviJC9J8E7_oFap8CAKPQ1LTWEou1WA/viewform">お問い合わせフォーム</a></strong></p>
+<p style="font-size:.9rem;margin-bottom:0">Google アカウントへのログインは必要ありません。
+お返事が必要な場合は、連絡先をご記入ください。
+フォームでお預かりした内容の扱いについては、<a href="privacy.html">プライバシーポリシー</a>の第9項をご覧ください。</p>
+</div>
+
+<h2>提供者</h2>
+<p>Ryo Sasaki</p>
+
+<h2>関連ページ</h2>
+<ul>
+<li><a href="terms.html">利用規約</a></li>
+<li><a href="privacy.html">プライバシーポリシー</a></li>
+</ul>
+
+<footer class="doc">
+<p>ゆずもと — グッズ交換の一覧画像と在庫・取引管理</p>
+<p>提供者: Ryo Sasaki</p>
+<p><a href="index.html">ホーム</a>　<a href="terms.html">利用規約</a>　<a href="privacy.html">プライバシーポリシー</a></p>
+</footer>
+</div>
+</body>
+</html>
